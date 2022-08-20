@@ -108,24 +108,24 @@ def RenderMiddleText(stdscr, k, servoKit):
 def parseKey(k, servoKit, camera):
     global image_count
     motor_step = 5
-    if k == ord('s'):
+    if k == ord('a'):
         servoKit.setAngle(1, servoKit.getAngle(1) - motor_step)
-    elif k == ord('w'):
-        servoKit.setAngle(1, servoKit.getAngle(1) + motor_step)
     elif k == ord('d'):
+        servoKit.setAngle(1, servoKit.getAngle(1) + motor_step)
+    elif k == ord('w'):
         servoKit.setAngle(0, servoKit.getAngle(0) + motor_step)
-    elif k == ord('a'):
+    elif k == ord('s'):
         servoKit.setAngle(0, servoKit.getAngle(0) - motor_step)
     elif k == ord('r'):
         servoKit.resetAll()
-    elif k == curses.KEY_DOWN:
-        servoKit.setAngle(3, servoKit.getAngle(3) - motor_step)
-    elif k == curses.KEY_UP:
-        servoKit.setAngle(3, servoKit.getAngle(3) + motor_step)
-    elif k == curses.KEY_RIGHT:
-        servoKit.setAngle(2, servoKit.getAngle(2) + motor_step)
     elif k == curses.KEY_LEFT:
-        servoKit.setAngle(2, servoKit.getAngle(2) - motor_step)
+        servoKit.setAngle(1, servoKit.getAngle(1) - motor_step)
+    elif k == curses.KEY_RIGHT:
+        servoKit.setAngle(1, servoKit.getAngle(1) + motor_step)
+    elif k == curses.KEY_UP:
+        servoKit.setAngle(0, servoKit.getAngle(0) + motor_step)
+    elif k == curses.KEY_DOWN:
+        servoKit.setAngle(0, servoKit.getAngle(0) - motor_step)
 
 
 # Python curses example Written by Clay McLeod
